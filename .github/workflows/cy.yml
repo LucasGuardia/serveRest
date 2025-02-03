@@ -39,7 +39,7 @@ jobs:
           
       # 6. Fazer upload do relatório do Allure como um artefato
       - name: Upload Allure Report as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2  # Usando a versão mais recente
         with:
           name: allure-report
           path: allure-report

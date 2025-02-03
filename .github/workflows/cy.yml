@@ -1,0 +1,45 @@
+name: Pipeline Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Checa o código no repositório
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 2. Configura o Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Substitua pela versão do Node.js que você está usando
+
+      # 3. Instala as dependências
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Rodar os testes com Mocha
+      - name: Run Mocha tests
+        run: npm test  # Supondo que seus testes estão configurados para rodar com npm test
+      
+      # 5. Gerar relatório do Allure
+      - name: Generate Allure Report
+        run: |
+          npm install -g allure-commandline
+          allure generate allure-results --clean -o allure-report
+          
+      # 6. Fazer upload do relatório do Allure como um artefato
+      - name: Upload Allure Report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: allure-report

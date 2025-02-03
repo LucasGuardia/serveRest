@@ -12,7 +12,7 @@ describe('Find Users', async () => {
     userRegistered = await registerUser(userData)
   })
 
-  it.only('Get user by ID', async () => {
+  it('Get user by ID', async () => {
     const response = await getUser({ _id: userRegistered.body._id })
 
     expect(response.status).to.be.eql(200)

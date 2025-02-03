@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Pipeline Tests ServeRest
 
 on:
   push:
@@ -29,4 +29,13 @@ jobs:
 
       # 4. Rodar os testes com Mocha
       - name: Run Mocha tests
-        run: npm test  # Supondo que seus testes estão configurados para rodar com npm test
+        run: |
+          npm install mocha-allure-reporter --save-dev
+          mocha --reporter mocha-allure-reporter --reporter-options allureResultsPath=allure-results test/**/*.test.js
+
+      # 5. Gerar relatório do Allure (sem upload de artefato)
+      - name: Generate Allure Report
+        run: |
+          npm install -g allure-commandline
+          allure generate allure-results --clean -o allure-report
+          allure open allure-report  # Caso queira abrir o relatório localmente no runner

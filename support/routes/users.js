@@ -1,5 +1,3 @@
-const { da } = require('@faker-js/faker')
-
 const request = require('supertest')('https://serverest.dev')
 
 module.exports = {

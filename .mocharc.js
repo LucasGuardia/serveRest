@@ -1,10 +1,10 @@
 module.exports = {
-    spec: ['test/**/*.test.js'],  // Localização dos testes
-    timeout: '30000',             // Timeout de 30 segundos por teste
-    retries: 3,                   // Tenta até 3 vezes em caso de falha
-    reporter: 'mocha-allure-reporter',  // Configuração do Allure Reporter
+    spec: ['test/**/*.test.js'],
+    timeout: '30000',
+    retries: 3,
+    reporter: 'mocha-allure-reporter',
     reporterOptions: {
-        allureResultsPath: 'allure-results' // Caminho onde os resultados do Allure serão salvos
+        allureResultsPath: 'allure-results'
     }
 };
 

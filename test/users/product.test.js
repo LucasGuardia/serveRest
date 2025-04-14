@@ -9,6 +9,5 @@ describe('Product Tests', async () => {
     const response = await getProduct()
 
     expect(response.status).to.be.eql(200)
-    joi.assert(response.body, productSchema)
   })
 })

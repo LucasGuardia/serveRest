@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/**/*.js --reporter mochawesome",
-    "report": "open mochawesome-report/mochawesome.html"
+    "report": "start mochawesome-report/mochawesome.html"
   },
   "keywords": [],
   "author": "",

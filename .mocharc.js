@@ -2,9 +2,12 @@ module.exports = {
     spec: ['test/**/*.test.js'],
     timeout: '30000',
     retries: 3,
-    reporter: 'mocha-allure-reporter',
+    reporter: 'mochawesome',
     reporterOptions: {
-        allureResultsPath: 'allure-results'
+        reportDir: 'mochawesome-report',
+        overwrite: true,
+        html: true,
+        json: false,
     }
-};
+}
 

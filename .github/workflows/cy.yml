@@ -29,7 +29,4 @@ jobs:
 
       # 4. Rodar os testes com Mocha
       - name: Run Mocha tests
-        run: npm run test  # Supondo que seus testes estão configurados para rodar com npm test
-
-      - name: Report Tests
-        run: npm run report
+        run: npm test  # Supondo que seus testes estão configurados para rodar com npm test

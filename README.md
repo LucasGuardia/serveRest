@@ -28,10 +28,34 @@ Projeto de automação de testes para a API [ServeRest](https://serverest.dev), 
 
 ---
 
-### ⚙️ Como executar o projeto
+### ⚙️ Como Executar o Projeto
 
-- Clone o repositório:
-git clone https://github.com/seu-usuario/serveRest_automation_api.git
+1. **Clone o repositório**:
+
+```bash
+git clone https://github.com/LucasGuardia/serveRest_automation_api
 cd serveRest_automation_api
+```
 
+2. **Instale as dependencias**:
 
+```bash
+npm install
+```
+
+3. **Execute os testes**:
+
+```bash
+npm run test
+```
+
+4. **Visualize o relatório HTML:**
+
+```bash
+npm run report
+```
+
+---
+
+### 👤 Autor 
+https://github.com/LucasGuardia
